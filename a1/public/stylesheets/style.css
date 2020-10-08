@@ -1,0 +1,201 @@
+/* 
+**  File name: style.css
+**  Student's name: Jongmin Park
+**  Student Id: 301102292
+**  Date: 7/10/2020
+**  Stitched by Jonny with LOVE
+*/
+
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+/* Reset */
+body, h1, h2, ul, li {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
+
+/* Global */
+html {
+  --pointColour: rgb(231, 162, 0);
+  --darkColour: rgb(20, 20, 20);
+  --grayColour: rgb(100, 100, 100);
+  --scrollbarTrack: rgba(0, 0, 0, 0);
+  font-family: 'Merriweather Sans', sans-serif;
+}
+body, a {
+  color: var(--darkColour);
+  font-size: 11pt;
+}
+h1 {
+  font-size: 1.3em;
+}
+h2 {
+  color: var(--grayColour);
+  font-size: 0.9em;
+}
+sup {
+  color: var(--grayColour);
+  margin-right: 10px; 
+}
+strong {
+  color: var(--pointColour);
+  font-size: 3em;
+}
+a {
+  transition: background-color 0.3s linear;
+  border-bottom: 3px solid var(--pointColour);
+}
+a:hover {
+  color: rgb(255, 255, 255);
+  background-color: var(--pointColour);
+}
+
+
+/* Body */
+body {
+  height: 100vh;
+  background-color: rgb(245, 245, 245);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Container */
+.container {
+  width: 800px;
+  height: 480px;
+}
+.container__box {
+  display: flex;
+  flex-direction: column;
+  height: 480px;
+  border-radius: 7px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to right, var(--darkColour) 0%, var(--darkColour) 200px, rgb(255, 255, 255) 200px,rgb(255, 255, 255) 100%);
+}
+
+
+/* Header */
+.header {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+}
+.header__logo {
+  width: 200px;
+}
+.logo__link {
+  margin: auto 40px;
+  border: none;
+}
+.logo__link:hover {
+  background: none;
+}
+.logo__image {
+  max-width: 70px;
+  height: auto;
+}
+.header__menu {
+  width: 600px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+}
+.menu__item {
+  font-size: 1.1em;
+  margin-right: 40px;
+  transition: text-shadow 0.3s linear;
+  border: none;
+  background: none;
+}
+.menu__item:hover {
+  text-shadow: 0 0 30px var(--pointColour);
+  border: none;
+  background: none;
+  color: var(--darkColour);
+}
+.menu__item--active {
+  color: var(--pointColour);
+}
+.menu__item--active:hover {
+  text-shadow: none;
+  color: var(--pointColour);
+}
+
+/* Contents */
+.contents {
+  height: 380px;
+}
+.contents__box {
+  margin-bottom: 30px;
+  height: 350px;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--darkColour) var(--scrollbarTrack);
+}
+.contents__box::-webkit-scrollbar {
+  width: 7px;
+}
+.contents__box::-webkit-scrollbar-track {
+  display: none;
+}
+.contents__box::-webkit-scrollbar-thumb {
+  background-color: var(--darkColour);
+}
+.article {
+  height: 350px;
+  display: flex;
+  flex-direction: row;
+}
+.article__image {
+  width: 260px;
+  height: 260px;
+  margin: auto 60px;
+}
+.article__text {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin-right: 40px;
+  padding: 40px 0;
+}
+.article__list {
+  margin: 10px 0;
+}
+
+
+/* Footer */
+.footer {
+  height: 20px;
+  vertical-align: bottom;
+}
+.footer__copyright {
+  font-size: 0.7em;
+}
+
+
+/* Hi-box */
+.hi-box {
+  height: 5rem;
+  width: 100%;
+  overflow: hidden;
+}
+.hi-box__list {
+  height: 5rem;
+  font-size: 4em;
+  margin: 0;
+  padding: 0;
+  vertical-align: bottom;
+  position: relative;
+  top: 0em;
+}

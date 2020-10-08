@@ -1,0 +1,20 @@
+<%- include ../partials/head.ejs %>
+  <body>
+      <div class="container">
+          <div class="container__box">
+                <header class="header">
+                    <%- include ../partials/header.ejs %>
+                </header>
+                <div class="contents">
+                    <div class="contents__box">
+                        <% if(page_name === 'projects') { %><%- include ../partials/projects.content.ejs %><% } %>
+                        <% if(page_name === 'services') { %><%- include ../partials/services.content.ejs %><% } %>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <%- include ../partials/footer.ejs %>
+            </footer>
+      </div>
+  </body>
+</html>
