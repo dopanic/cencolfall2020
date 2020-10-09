@@ -186,6 +186,15 @@ body {
 }
 
 
+/* Form */
+.form {
+
+}
+.form__label {
+  display: none; /* The labels are for the screen reader. */
+}
+
+
 /* Footer */
 .footer {
   height: 20px;
@@ -197,12 +206,12 @@ body {
 
 
 /* Hi-box */
-.hi-box {
+.autoScrollBanner {
   height: 5rem;
   width: 100%;
   overflow: hidden;
 }
-.hi-box__list {
+.autoScrollBanner__list {
   height: 5rem;
   font-size: 4em;
   margin: 0;
