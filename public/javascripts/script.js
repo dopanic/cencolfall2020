@@ -34,11 +34,6 @@ function autoRndBannerScrolling(target_class) {
 // autoScrollBanner(test);
 
 
-
-window.addEventListener('load', (event) => { autoRndBannerScrolling('.autoScrollBanner'); }); // when loaded, scroll the banner
-setInterval(() => { autoRndBannerScrolling('.autoScrollBanner'); }, 2500);
-
-
 //// contactme.ejs
 // control the submut
 function submit() {

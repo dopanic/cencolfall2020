@@ -1,27 +1,25 @@
 var express = require('express');
 var router = express.Router();
 
-const general_title = 'Jonny\'s Portfolio Site';
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: general_title, page_name: 'home' });
+  res.render('index', { page_name: 'index' });
 });
 
 router.get('/aboutme', function(req, res, next) {
-  res.render('aboutme', { title: general_title, page_name: 'aboutme' });
+  res.render('aboutme', { page_name: 'aboutme' });
 });
 
 router.get('/projects', function(req, res, next) {
-  res.render('projects', { title: general_title, page_name: 'projects' });
+  res.render('projects', { page_name: 'projects' });
 });
 
 router.get('/services', function(req, res, next) {
-  res.render('projects', { title: general_title, page_name: 'services' });
+  res.render('projects', { page_name: 'services' });
 });
 
 router.get('/contactme', function(req, res, next) {
-  res.render('contactme', { title: general_title, page_name: 'contactme' });
+  res.render('contactme', { page_name: 'contactme' });
 });
 
 module.exports = router;
