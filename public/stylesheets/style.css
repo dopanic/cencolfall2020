@@ -79,7 +79,7 @@ body {
   flex-direction: column;
   height: 480px;
   border-radius: 7px;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.7);
   background: linear-gradient(to right, var(--darkColour) 0%, var(--darkColour) 200px, rgb(255, 255, 255) 200px,rgb(255, 255, 255) 100%);
 }
 
@@ -162,6 +162,8 @@ body {
   width: 260px;
   height: 260px;
   margin: auto 60px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 .article__text {
   box-sizing: border-box;
