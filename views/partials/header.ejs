@@ -1,0 +1,11 @@
+<div class="header header__logo">
+    <a class="logo__link" href="/"><img class="logo__image" src="/images/logo.png"></a>
+</div>
+<div class="header header__menu">
+    <nav class="menu">
+        <a class="menu__item<% if(page_name === 'aboutme') { %> menu__item--active<% } %>" href="/aboutme">About me</a>
+        <a class="menu__item<% if(page_name === 'projects') { %> menu__item--active<% } %>" href="/projects">Projects</a>
+        <a class="menu__item<% if(page_name === 'services') { %> menu__item--active<% } %>" href="/services">Services</a>
+        <a class="menu__item<% if(page_name === 'contactme') { %> menu__item--active<% } %>" href="/contactme">Contact me</a>
+    </nav>
+</div>

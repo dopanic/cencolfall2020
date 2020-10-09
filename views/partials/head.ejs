@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            <% if(page_name === 'aboutme') { %>About me - <% } %>
+            <% if(page_name === 'projects') { %>Projects - <% } %>
+            <% if(page_name === 'services') { %>Services - <% } %>
+            <% if(page_name === 'contactme') { %>Contace me - <% } %>
+            <%= title %>
+        </title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+        <script src="/javascripts/script.js" defer></script>
+    </head>

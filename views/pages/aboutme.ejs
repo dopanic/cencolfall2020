@@ -1,0 +1,31 @@
+<%- include ../partials/head.ejs %>
+  <body>
+      <div class="container">
+          <div class="container__box">
+                <header class="header">
+                    <%- include ../partials/header.ejs %>
+                </header>
+                <div class="contents">
+                    <div class="contents__box">
+                        <article class="article">
+                            <img class="article__image" src="/images/test.jpg">
+                            <div class="article__text">
+                                <h1>Hello! My name is...</h1>
+                                <h2>Bonjour! Je m'appelle...</h2>
+                                <p><strong>Jongmin Park</strong></p>
+                                <ul>
+                                    <li class="article__list"><sup>Languages:</sup>English, Korean</li>
+                                    <li class="article__list"><sup>Programming:</sup>C#, Python, JS/TS</li>
+                                    <li class="article__list"><sup>Skills:</sup>Node.js, Docker</li>
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <%- include ../partials/footer.ejs %>
+            </footer>
+      </div>
+  </body>
+</html>
