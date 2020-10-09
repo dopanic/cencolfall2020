@@ -174,11 +174,15 @@ body {
   margin: 10px 0;
 }
 .article__copyright {
-  font-size: 0.8em;
+  font-size: 0.6rem;
   color: var(--greyColour);
 }
 .article__copyright--link {
-
+  border: none; /* to remove the general link decoration */
+}
+.article__copyright--link:hover {
+  color: var(--darkColour);
+  background: none; /* to remove the general link decoration */
 }
 
 
