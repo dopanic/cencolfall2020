@@ -51,7 +51,7 @@ strong {
 }
 a {
   transition: background-color 0.3s linear;
-  border-bottom: 3px solid var(--pointColour);
+  border-bottom: 2px solid var(--pointColour);
 }
 a:hover {
   color: rgb(255, 255, 255);
