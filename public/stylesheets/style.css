@@ -26,7 +26,7 @@ ul {
 html {
   --pointColour: rgb(231, 162, 0);
   --darkColour: rgb(20, 20, 20);
-  --grayColour: rgb(100, 100, 100);
+  --greyColour: rgb(100, 100, 100);
   --scrollbarTrack: rgba(0, 0, 0, 0);
   font-family: 'Merriweather Sans', sans-serif;
 }
@@ -38,11 +38,11 @@ h1 {
   font-size: 1.3em;
 }
 h2 {
-  color: var(--grayColour);
+  color: var(--greyColour);
   font-size: 0.9em;
 }
 sup {
-  color: var(--grayColour);
+  color: var(--greyColour);
   margin-right: 10px; 
 }
 strong {
@@ -132,6 +132,7 @@ body {
   color: var(--pointColour);
 }
 
+
 /* Contents */
 .contents {
   height: 380px;
@@ -171,6 +172,13 @@ body {
 }
 .article__list {
   margin: 10px 0;
+}
+.article__copyright {
+  font-size: 0.8em;
+  color: var(--greyColour);
+}
+.article__copyright--link {
+
 }
 
 
