@@ -7,7 +7,8 @@
 //// General
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
-  }
+}
+
 function smoothScrollTo(target, order) {
     var target_height = document.querySelector(target).clientHeight;
     var new_scroll_position = order * target_height;

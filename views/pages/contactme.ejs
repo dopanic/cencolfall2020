@@ -8,7 +8,7 @@
                 <div class="contents">
                     <div class="contents__box">
                         <article class="article">
-                            <img class="article__image" src="/images/test.jpg">
+                            <img class="article__image" src="/images/contactme.jpg">
                             <div class="article__text">
                                 <h1>Contact me on...</h1>
                                 <h2>Contactez-moi sur...</h2>
@@ -17,13 +17,14 @@
                                     <li class="article__list"><sup>Github:</sup><a href="https://github.com/dopanic">dopanic</a></li>
                                     <li class="article__list"><sup>Linkedin:</sup><a href="https://www.linkedin.com/in/park-jongmin">park-jongmin</a></li>
                                 </ul>
+                                <br>
                                 <form class="form" action="javascript:submit()" method="post">
-                                    <label class="form__label" for="firstname">First Name</label><input class="form__input" id="firstname" name="firstname" placeholder="First Name"><br>
-                                    <label class="form__label" for="lastname">Last Name</label><input class="form__input" id="lastname" name="lastname" name="lastname" placeholder="Last Name"><br>
+                                    <label class="form__label" for="firstname">First Name</label><input class="form__input" id="firstname" name="firstname" placeholder="First Name" required><br>
+                                    <label class="form__label" for="lastname">Last Name</label><input class="form__input" id="lastname" name="lastname" name="lastname" placeholder="Last Name" required><br>
                                     <label class="form__label" for="email">E-Mail</label><input class="form__input" id="email" name="email" name="email" placeholder="E-Mail"><br>
                                     <label class="form__label" for="phone">Phone</label><input class="form__input" id="phone" name="phone" name="phone" placeholder="Phone"><br>
-                                    <textarea class="form__input form__textarea"></textarea><br>
-                                    <input class="form__submit" type="submit" value="Leave a message">
+                                    <textarea class="form__input form__textarea" placeholder="Write here:" required></textarea><br>
+                                    <button class="form__submit">Leave a message</button>
                                 </form>
                             </div>
                         </article>
