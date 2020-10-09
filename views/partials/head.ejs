@@ -26,4 +26,18 @@ Stitched by Jonny with LOVE
             setInterval(() => { autoRndBannerScrolling('.autoScrollBanner'); }, 2500);
         </script>
         <% } %>
+        <% if(page_name === 'projects' || page_name === 'services') { %>
+            <script defer>
+                // auto scrolling article starter
+                var int_for_loop = 1;
+                setInterval(() => {
+                    smoothScrollTo('.contents__box', int_for_loop);
+                    if (int_for_loop === 2) {
+                        int_for_loop = 0;
+                    } else {
+                        int_for_loop +=1;
+                    }
+                }, 2500);
+            </script>
+        <% } %>
     </head>
