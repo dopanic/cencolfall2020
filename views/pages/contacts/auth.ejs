@@ -1,0 +1,14 @@
+<%- include ../../partials/header.ejs %>
+<article class="article">
+    <div class="article__text article__text--without_left_img">
+        <div class="sheet">
+            <!-- Header row -->
+            <form class="form" method="POST">
+                <label class="form__label" for="uname">E-Mail</label><input class="form__input" name="uid" placeholder="Username"><br>
+                <label class="form__label" for="password">Phone</label><input class="form__input" type="password" name="password" placeholder="Password">
+                <button class="sheet_row__button sheet_row__button--submit_add" type="submit">Sign In</button>
+            </form>
+        </div>
+    </div>
+</article>
+<%- include ../../partials/footer.ejs %>
