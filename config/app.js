@@ -5,26 +5,39 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var favicon = require('serve-favicon');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+// database setup
+var mongoose = require('mongoose');
+var DB = require('./db');
+
+// point Mongoose to the DB URI
+mongoose.connect(DB.URI, {useNewUrlParser: true});
+
+var mongoDB = mongoose.connection;
+mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
+mongoDB.once('open', ()=>{
+  console.log('Connected to MongoDB...');
+});
+
+var indexRouter = require('../routes/index');
+var usersRouter = require('../routes/users');
 
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views/pages'));
+app.set('views', path.join(process.cwd(), '/views/pages'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(process.cwd(), '/public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 // set favicon
-app.use(favicon(__dirname + '/public/images/favicon.ico'));
+app.use(favicon(process.cwd() + '/public/images/favicon.ico'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
