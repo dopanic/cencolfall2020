@@ -1,0 +1,30 @@
+<%- include ../../partials/header.ejs %>
+<article class="article">
+    <div class="article__text article__text--without_left_img">
+        <div class="sheet">
+            <!-- Header row -->
+            <form class="sheet__row" method="POST">
+                <input class="sheet__cell--hidden" name="cid" <% if(locals.target_contact) { %>value="<%- target_contact._id %>"<% } %>>
+                <input class="sheet__cell" name="name" placeholder="Name" <% if(locals.target_contact) { %>value="<%- target_contact.name %>"<% } %>required>
+                <input class="sheet__cell" name="number" type="tel" pattern="[0-9]{10}" placeholder="Contact Number" title="Ten numbers are needed." <% if(locals.target_contact) { %>value="<%- target_contact.number %>"<% } %>required>
+                <input class="sheet__cell" name="email" placeholder="Email Address" <% if(locals.target_contact) { %>value="<%- target_contact.email %>"<% } %>required>
+                <button class="sheet_row__button sheet_row__button--submit_add" type="submit">Confirm</button>
+                <a href="/contacts" class="sheet_row__button" type="button">Cancel</a>
+            </form>
+            <!-- Repeatable template row -->
+            <% for(let for_loop_cnt = 0; for_loop_cnt < contact_list.length; for_loop_cnt++) { %>
+            <% if(!locals.target_contact || !contact_list[for_loop_cnt]._id.equals(locals.target_contact._id)) { %>
+            <div class="sheet__row">
+                <input class="sheet__cell" value="<%- contact_list[for_loop_cnt].name %>" readonly>
+                <input class="sheet__cell" value="<%- contact_list[for_loop_cnt].number %>" readonly>
+                <input class="sheet__cell" value="<%- contact_list[for_loop_cnt].email %>" readonly>
+                <a class="sheet_row__button" type="button" href="/contacts/edit/<%= contact_list[for_loop_cnt]._id %>">Edit</a>
+                <a class="sheet_row__button" type="button" href="/contacts/delete/<%= contact_list[for_loop_cnt]._id %>">Delete</a>
+            </div>
+            <% } %>
+            <% } %>
+            </table>
+        </div>
+    </div>
+</article>
+<%- include ../../partials/footer.ejs %>

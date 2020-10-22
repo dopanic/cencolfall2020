@@ -10,16 +10,17 @@ var mongoose = require('mongoose');
 var DB = require('./db');
 
 // point Mongoose to the DB URI
-mongoose.connect(DB.URI, {useNewUrlParser: true});
+mongoose.connect(DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
 
 var mongoDB = mongoose.connection;
 mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
-mongoDB.once('open', ()=>{
+mongoDB.once('open', () => {
   console.log('Connected to MongoDB...');
 });
 
 var indexRouter = require('../routes/index');
 var usersRouter = require('../routes/users');
+var contactRouter = require('../routes/contact');
 
 var app = express();
 
@@ -35,6 +36,7 @@ app.use(express.static(path.join(process.cwd(), '/public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/contacts', contactRouter);
 
 // set favicon
 app.use(favicon(process.cwd() + '/public/images/favicon.ico'));

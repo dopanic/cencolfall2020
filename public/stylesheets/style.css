@@ -172,6 +172,12 @@ body {
   margin-right: 40px;
   padding: 40px 0;
 }
+.article__text--without_left_img {
+  margin-left: 40px;
+  padding-left: 40px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+}
 .article__list {
   margin: 10px 0;
 }
@@ -214,6 +220,15 @@ body {
   cursor: pointer;
   color: rgb(255, 255, 255);
   background-color: var(--darkColour);
+}
+
+
+/* Sheet */
+ .sheet__cell--hidden, .sheet_row__button--submit, .sheet_row__button--cancel {
+  display: none;
+}
+.sheet__row--hidden {
+  display: none;
 }
 
 
