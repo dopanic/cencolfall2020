@@ -25,6 +25,7 @@ ul {
 /* Global */
 html, input, textarea {
   --pointColour: rgb(231, 162, 0);
+  --linkColour: rgb(192, 139, 14);
   --darkColour: rgb(20, 20, 20);
   --greyColour: rgb(100, 100, 100);
   --scrollbarTrack: rgba(0, 0, 0, 0);
@@ -50,12 +51,10 @@ strong {
   font-size: 3em;
 }
 a {
-  transition: background-color 0.3s linear;
-  border-bottom: 2px solid var(--pointColour);
+  color: var(--linkColour);
 }
 a:hover {
-  color: rgb(255, 255, 255);
-  background-color: var(--pointColour);
+  text-decoration: underline;
 }
 
 
@@ -114,22 +113,18 @@ body {
 .menu__item {
   font-size: 1.1em;
   margin-right: 40px;
-  transition: text-shadow 0.3s linear;
-  border: none;
-  background: none;
-}
-.menu__item:hover {
-  text-shadow: 0 0 30px var(--pointColour);
-  border: none;
-  background: none;
   color: var(--darkColour);
 }
+.menu__item:hover {
+  color: var(--linkColour);
+}
 .menu__item--active {
-  color: var(--pointColour);
+  color: var(--darkColour);
+  text-decoration: line-through;
 }
 .menu__item--active:hover {
-  text-shadow: none;
-  color: var(--pointColour);
+  color: var(--darkColour);
+  text-decoration: line-through;
 }
 
 
@@ -173,10 +168,7 @@ body {
   padding: 40px 0;
 }
 .article__text--without_left_img {
-  margin-left: 40px;
-  padding-left: 40px;
-  background-color: rgb(255, 255, 255);
-  border-radius: 5px;
+  margin-left: 240px;
 }
 .article__list {
   margin: 10px 0;
@@ -224,13 +216,21 @@ body {
 
 
 /* Sheet */
- .sheet__cell--hidden, .sheet_row__button--submit, .sheet_row__button--cancel {
+.sheet__cell {
+  font-size: 0.9em;
+  box-sizing: border-box;
+  border: none;
+  outline-width: 0;
+}
+.sheet__cell--writable {
+  border-bottom: 2px solid var(--darkColour);
+}
+.sheet_row__button {
+  font-size: 0.9em;
+}
+ .sheet__cell--hidden, .sheet__row--hidden {
   display: none;
 }
-.sheet__row--hidden {
-  display: none;
-}
-
 
 /* Footer */
 .footer {
