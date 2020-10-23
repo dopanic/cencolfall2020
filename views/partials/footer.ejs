@@ -3,6 +3,16 @@
             </div>
             <footer class="footer">
                 <span class="footer__copyright">&copy; Jonny Park 2020</span>
+                <span>
+                    <% if(!displayName) { %>
+                        <a href="/signin">Sign In</a>
+                         / <a href="/register">Register</a>
+                    <% } %>
+                    <% if(displayName) { %>
+                        <a href="/logout">Log Out</a>
+                        / <a href="/contacts">Business Contacts</a>
+                    <% } %>
+                </span>
             </footer>
         </div>
     </body>

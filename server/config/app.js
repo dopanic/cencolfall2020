@@ -1,26 +1,35 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var favicon = require('serve-favicon');
+// installed third-party packages
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
+let favicon = require('serve-favicon');
+
+// modules for authentication
+let session = require('express-session');
+let passport = require('passport');
+let passportLocal = require('passport-local');
+let localStrategy = passportLocal.Strategy;
+let flash = require('connect-flash');
 
 // database setup
-var mongoose = require('mongoose');
-var DB = require('./db');
+let mongoose = require('mongoose');
+let DB = require('./db');
 
 // point Mongoose to the DB URI
 mongoose.connect(DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
 
-var mongoDB = mongoose.connection;
+let mongoDB = mongoose.connection;
 mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
 mongoDB.once('open', () => {
   console.log('Connected to MongoDB...');
 });
 
-var indexRouter = require('../routes/index');
-var usersRouter = require('../routes/users');
-var contactRouter = require('../routes/contact');
+let indexRouter = require('../routes/index');
+let usersRouter = require('../routes/users');
+let contactRouter = require('../routes/contact');
+const { setegid } = require('process');
 
 var app = express();
 
@@ -33,6 +42,34 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(process.cwd(), '/public')));
+
+// setup express
+app.use(session({
+  secret: "SomeSecret",
+  saveUninitialized: false,
+  resave: false
+}));
+
+// initialize flash
+app.use(flash());
+
+// initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+// passport user configuration
+
+// create a User Model instance
+let userModel = require('../models/user');
+let User = userModel.User;
+
+// implement a User A
+passport.use(User.createStrategy());
+
+// serialize and deserialize the User info
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

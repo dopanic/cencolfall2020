@@ -7,7 +7,7 @@ let contactModel = mongoose.Schema({
     email: String
 },
 {
-    collection: 'contacts'
+    collection: "contacts"
 });
 
 module.exports = mongoose.model('contact', contactModel);

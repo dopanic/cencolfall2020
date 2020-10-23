@@ -13,7 +13,7 @@ module.exports.renderContactsListPage = (req, res, next) => {
             return console.error(err);
         }
         else{
-            res.render('./contacts/list', { page_name: 'contacts_list', contact_list: contact_list });
+            res.render('./contacts/list', { page_name: 'contacts_list', contact_list: contact_list, displayName: req.user ? req.user.displayName : '' });
         }
     });
 }
@@ -59,7 +59,7 @@ module.exports.renderEditContactPage = (req, res, next) => {
                 }
                 else{
                     //show the edit view
-                    res.render('./contacts/list', { page_name: 'contacts_list', target_contact: targetContact, contact_list: contactList });
+                    res.render('./contacts/list', { page_name: 'contacts_list', target_contact: targetContact, contact_list: contactList, displayName: req.user ? req.user.displayName : '' });
                 }
             })
         }
