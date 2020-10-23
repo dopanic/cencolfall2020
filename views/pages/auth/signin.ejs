@@ -1,24 +1,25 @@
 <%- include ../../partials/header.ejs %>
 <article class="article">
     <div class="article__text--without_left_img">
-        <!-- Message -->
+        <h1>Sign In</h1>
+        <form class="form" method="POST">
+        <!-- Message Window -->
         <% if(messages.length > 0) { %>
-            <div class="message">
+            <div class="form__msg">
                 <%= messages %>
             </div>
         <% } %>
-        <!-- Header row -->
-        <form action="" class="form" method="POST">
-            <fieldset>
+        <!-- Form -->
+            <fieldset class="form__fieldset">
                 <label class="form__label" for="username">Username</label>
                 <input class="form__input" name="username" placeholder="Username" required><br>
             </fieldset>
-            <fieldset>
+            <fieldset class="form__fieldset">
             <label class="form__label" for="password">Password</label>
             <input class="form__input" type="password" name="password" placeholder="Password" required>
             </fieldset>
-            <button class="sheet_row__button sheet_row__button--submit_add" type="submit">Sign in</button>
-            <span>Don't have an account? <a href="/register" class="sheet_row__button" type="button">Register here</a></span>
+            <button class="form__submit" type="submit">Sign in</button><br><br>
+            <span>Don't have an account? <a href="/register" class="form__link" type="button">Register here</a></span>
         </form>
     </div>
 </article>

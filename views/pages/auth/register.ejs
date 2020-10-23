@@ -1,34 +1,34 @@
 <%- include ../../partials/header.ejs %>
 <article class="article">
-    <div class="article__text article__text--without_left_img">
-        <div class="sheet">
-            <!-- Message -->
-            <% if(messages.length > 0) { %>
-                <div class="message">
-                    <%= messages %>
-                </div>
-            <% } %>
-            <!-- Header row -->
-            <form action="" class="form" method="POST">
-                <fieldset>
-                    <label class="form__label" for="username">Username</label>
-                    <input class="form__input" name="username" placeholder="Username" required><br>
-                </fieldset>
-                <fieldset>
-                <label class="form__label" for="password">Password</label>
-                <input class="form__input" type="password" name="password" placeholder="Password" required>
-                </fieldset>
-                <fieldset>
-                    <label class="form__label" for="email">Email Address</label>
-                    <input class="form__input" name="email" placeholder="Email Address" required><br>
-                </fieldset>
-                <fieldset>
-                    <label class="form__label" for="displayname">Display Name</label>
-                    <input class="form__input" name="displayname" placeholder="Display Name" required><br>
-                </fieldset>
-                <button class="sheet_row__button sheet_row__button--submit_add" type="submit">Register</button>
-            </form>
-        </div>
+    <div class="article__text--without_left_img">
+        <h1>Sign Up</h1>
+        <form class="form" method="POST">
+        <!-- Message Window -->
+        <% if(messages.length > 0) { %>
+            <div class="form__msg">
+                <%= messages %>
+            </div>
+        <% } %>
+        <!-- Header row -->
+            <fieldset class="form__fieldset">
+                <label class="form__label" for="username">Username</label>
+                <input class="form__input" name="username" placeholder="Username" required><br>
+            </fieldset>
+            <fieldset class="form__fieldset">
+            <label class="form__label" for="password">Password</label>
+            <input class="form__input" type="password" name="password" placeholder="Password" required>
+            </fieldset>
+            <fieldset class="form__fieldset">
+                <label class="form__label" for="email">Email Address</label>
+                <input class="form__input" name="email" placeholder="Email Address" required><br>
+            </fieldset>
+            <fieldset class="form__fieldset">
+                <label class="form__label" for="displayname">Display Name</label>
+                <input class="form__input" name="displayname" placeholder="Display Name" required><br>
+            </fieldset>
+            <button class="form__submit" type="submit">Register</button>
+            <a href="/" class="form__link" type="button">Cancel</a>
+        </form>
     </div>
 </article>
 <%- include ../../partials/footer.ejs %>

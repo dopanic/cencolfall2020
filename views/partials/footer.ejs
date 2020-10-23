@@ -2,15 +2,16 @@
                 </div>
             </div>
             <footer class="footer">
-                <span class="footer__copyright">&copy; Jonny Park 2020</span>
-                <span>
+                <span class="footer__text">&copy; Jonny Park 2020</span>
+                <span class="footer__text">
                     <% if(!displayName) { %>
-                        <a href="/signin">Sign In</a>
-                         / <a href="/register">Register</a>
+                        <a href="/signin" class="footer__link">Sign In</a>
+                         / <a href="/register" class="footer__link">Register</a>
                     <% } %>
                     <% if(displayName) { %>
-                        <a href="/logout">Log Out</a>
-                        / <a href="/contacts">Business Contacts</a>
+                        [ <%= displayName %> ]
+                        <a href="/logout" class="footer__link">Log Out</a>
+                        / <a href="/contacts" class="footer__link">Business Contacts</a>
                     <% } %>
                 </span>
             </footer>

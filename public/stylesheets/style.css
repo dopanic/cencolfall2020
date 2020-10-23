@@ -23,7 +23,7 @@ ul {
 
 
 /* Global */
-html, input, textarea {
+html, input, textarea, button {
   --pointColour: rgb(231, 162, 0);
   --linkColour: rgb(192, 139, 14);
   --darkColour: rgb(20, 20, 20);
@@ -37,6 +37,7 @@ body, a {
 }
 h1 {
   font-size: 1.3em;
+  margin-bottom: 20px;
 }
 h2 {
   color: var(--greyColour);
@@ -114,17 +115,19 @@ body {
   font-size: 1.1em;
   margin-right: 40px;
   color: var(--darkColour);
+  padding: 4px 8px;
 }
 .menu__item:hover {
   color: var(--linkColour);
 }
 .menu__item--active {
-  color: var(--darkColour);
-  text-decoration: line-through;
+  color: rgb(255, 255, 255);
+  background-color: var(--darkColour);
+  padding: 4px 8px;
 }
 .menu__item--active:hover {
-  color: var(--darkColour);
-  text-decoration: line-through;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
 }
 
 
@@ -187,6 +190,11 @@ body {
 
 
 /* Form */
+.form__fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
 .form__label {
   display: none; /* The labels are for the screen reader. */
 }
@@ -198,24 +206,54 @@ body {
   border-bottom: 2px solid var(--darkColour);
   width: 250px;
   font-size: 1rem;
+  outline-width: 0;
+}
+.form__input:hover {
+  border-bottom: 2px solid var(--linkColour);
+}
+.form__input:focus {
+  border-bottom: 2px solid var(--pointColour);
 }
 .form__submit {
   box-sizing: border-box;
-  padding: 20px 0;
-  border: none;
+  padding: 15px 0;
+  margin-bottom: 15px;
   border: 2px solid var(--darkColour);
   width: 250px;
   font-size: 1rem;
   background-color: rgb(255, 255, 255);
+  display: block;
 }
 .form__submit:hover {
   cursor: pointer;
   color: rgb(255, 255, 255);
   background-color: var(--darkColour);
 }
+.form__link {
+  color: var(--darkColour);
+  text-decoration: underline;
+}
+.form__link:hover {
+  color: var(--linkColour);
+  text-decoration: underline;
+}
+.form__msg {
+  max-width: 100%;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: rgb(145, 13, 13);;
+  margin: 35px 0;
+}
 
 
 /* Sheet */
+.sheet__row {
+  margin: 10px 0;
+}
+.sheet__row--first_row {
+  margin: 25px 0;
+}
 .sheet__cell {
   font-size: 0.9em;
   box-sizing: border-box;
@@ -227,8 +265,26 @@ body {
 }
 .sheet_row__button {
   font-size: 0.9em;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 2px 4px;
+  color: rgb(255, 255, 255);
+  background-color: var(--darkColour);
+  vertical-align: middle;
+  margin-left: 5px;
 }
- .sheet__cell--hidden, .sheet__row--hidden {
+.sheet_row__button:hover {
+  text-decoration: none;
+  background-color: var(--linkColour);
+}
+.sheet_row__button--caution {
+  background-color: rgb(170, 25, 25);
+}
+.sheet_row__button--caution:hover {
+  background-color: rgb(145, 13, 13);
+}
+.sheet__cell--hidden, .sheet__row--hidden {
   display: none;
 }
 
@@ -237,8 +293,17 @@ body {
   height: 20px;
   vertical-align: bottom;
 }
-.footer__copyright {
-  font-size: 0.7em;
+.footer__text {
+  font-size: 0.7rem;
+  margin-right: 10px;
+}
+.footer__link {
+  font-size: 0.7rem;
+  color: var(--darkColour);
+}
+.footer__link:hover {
+  color: var(--linkColour);
+  text-decoration: underline;
 }
 
 

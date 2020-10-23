@@ -13,7 +13,7 @@ router.get('/aboutme', indexController.renderAboutMePage);
 router.get('/projects', indexController.renderProjectsPage);
 
 // GET route to render the Services page
-router.get('/services', indexController.renderProjectsPage);
+router.get('/services', indexController.renderServicesPage);
 
 // GET route to render the ContactMe page
 router.get('/contactme', indexController.renderContactMePage);

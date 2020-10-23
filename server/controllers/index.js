@@ -18,9 +18,14 @@ module.exports.renderAboutMePage = (req, res, next) => {
     res.render('aboutme', { page_name: 'aboutme', displayName: req.user ? req.user.displayName : '' });
 }
 
-// render the Projects&Services page
+// render the Projects page
 module.exports.renderProjectsPage = (req, res, next) => {
     res.render('projects', { page_name: 'projects', displayName: req.user ? req.user.displayName : '' });
+}
+
+// render the Services page
+module.exports.renderServicesPage = (req, res, next) => {
+    res.render('projects', { page_name: 'services', displayName: req.user ? req.user.displayName : '' });
 }
 
 // render the ContactMe page
