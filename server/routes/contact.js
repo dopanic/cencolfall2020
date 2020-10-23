@@ -18,7 +18,7 @@ function requireAuth(req, res, next)
 }
 
 // GET route to render the list page: READ
-router.get('/', contactController.renderContactsListPage);
+router.get('/', requireAuth, contactController.renderContactsListPage);
 
 // POST route for the add process: CREATE
 router.post('/', requireAuth, contactController.processAddContact);

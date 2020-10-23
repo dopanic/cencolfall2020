@@ -7,15 +7,20 @@ let Contact = require('../models/contact');
 
 // render the list of Contacts page
 module.exports.renderContactsListPage = (req, res, next) => {
-    Contact.find((err, contact_list) => {
+    let sortingField = 'name'; // the default sorting field is name
+    if(typeof req.query.field === 'string') sortingField = req.query.field;
+    let sortingOrder =  'asc'; // the default sorting order is ascending
+    if(typeof req.query.order === 'string') sortingOrder = req.query.order;
+
+    Contact.find((err, contactList) => {
         if (err)
         {
             return console.error(err);
         }
         else{
-            res.render('./contacts/list', { page_name: 'contacts_list', contact_list: contact_list, displayName: req.user ? req.user.displayName : '' });
+            res.render('./contacts/list', { page_name: 'contacts_list', contact_list: contactList, displayName: req.user ? req.user.displayName : '' });
         }
-    });
+    }).sort( { [sortingField]: sortingOrder } );
 }
 
 // process adding a contact
@@ -61,7 +66,7 @@ module.exports.renderEditContactPage = (req, res, next) => {
                     //show the edit view
                     res.render('./contacts/list', { page_name: 'contacts_list', target_contact: targetContact, contact_list: contactList, displayName: req.user ? req.user.displayName : '' });
                 }
-            })
+            }).sort( { name: 1 } );
         }
     });
 }

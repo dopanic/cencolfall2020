@@ -4,7 +4,7 @@
         <div class="sheet">
             <h1>Business Contacts List</h1>
             <!-- Header row -->
-            <form class="sheet__row sheet__row--first_row" method="POST">
+            <form class="sheet__row sheet__row" method="POST">
                 <input class="sheet__cell sheet__cell--hidden" name="cid" <% if(locals.target_contact) { %>value="<%- target_contact._id %>"<% } %>>
                 <input class="sheet__cell sheet__cell--writable" name="name" placeholder="Name" size="14" <% if(locals.target_contact) { %>value="<%- target_contact.name %>"<% } %>required>
                 <input class="sheet__cell sheet__cell--writable" name="number" type="tel" pattern="[0-9]{10}" maxlength="10" size="10" placeholder="Phone" title="Ten numbers are needed." <% if(locals.target_contact) { %>value="<%- target_contact.number %>"<% } %>required>
@@ -12,6 +12,15 @@
                 <button class="sheet_row__button" type="submit">Add</button>
                 <a href="/contacts" class="sheet_row__button" type="button">Cancel</a>
             </form>
+            <div class="sheet__row">
+                Sort:
+                <a href="/contacts?field=name&order=asc" class="sheet_row__button" type="button">Name&#11121;</a>
+                <a href="/contacts?field=name&order=desc" class="sheet_row__button" type="button">Name&#11123;</a>
+                <a href="/contacts?field=number&order=asc" class="sheet_row__button" type="button">Phone&#11121;</a>
+                <a href="/contacts?field=number&order=desc" class="sheet_row__button" type="button">Phone&#11123;</a>
+                <a href="/contacts?field=email&order=asc" class="sheet_row__button" type="button">Email&#11121;</a>
+                <a href="/contacts?field=email&order=desc" class="sheet_row__button" type="button">Email&#11123;</a>
+            </div>
             <!-- Repeatable template row -->
             <% for(let for_loop_cnt = 0; for_loop_cnt < contact_list.length; for_loop_cnt++) { %>
             <% if(!locals.target_contact || !contact_list[for_loop_cnt]._id.equals(locals.target_contact._id)) { %>
