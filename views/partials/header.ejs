@@ -10,11 +10,14 @@ Stitched by Jonny with LOVE
     <head>
         <meta charset="UTF-8">
         <title>
-            <% if(page_name === 'aboutme') { %>About me - <% } %>
-            <% if(page_name === 'projects') { %>Projects - <% } %>
-            <% if(page_name === 'services') { %>Services - <% } %>
-            <% if(page_name === 'contactme') { %>Contace me - <% } %>
-            <% if(page_name === 'contacts') { %>Business Contacts List - <% } %>
+            <% if(page_name === 'aboutme') { %>About me<% } %>
+            <% if(page_name === 'projects') { %>Projects<% } %>
+            <% if(page_name === 'services') { %>Services <% } %>
+            <% if(page_name === 'contactme') { %>Contace me<% } %>
+            <% if(page_name === 'contacts_list' || page_name === 'contacts_edit') { %>Business Contacts List - <% } %>
+            <% if(page_name === 'signin') { %>Sign in<% } %>
+            <% if(page_name === 'register') { %>Register<% } %>
+            <% if(page_name !== 'index') { %>&nbsp;-&nbsp;<% } %>
             Jonny's Portfolio
         </title>
         <link rel='stylesheet' href='/stylesheets/style.css' />

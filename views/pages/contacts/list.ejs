@@ -9,7 +9,10 @@
                 <input class="sheet__cell sheet__cell--writable" name="name" placeholder="Name" size="14" <% if(locals.target_contact) { %>value="<%- target_contact.name %>"<% } %>required>
                 <input class="sheet__cell sheet__cell--writable" name="number" type="tel" pattern="[0-9]{10}" maxlength="10" size="10" placeholder="Phone" title="Ten numbers are needed." <% if(locals.target_contact) { %>value="<%- target_contact.number %>"<% } %>required>
                 <input class="sheet__cell sheet__cell--writable" name="email" size="25" placeholder="Email" <% if(locals.target_contact) { %>value="<%- target_contact.email %>"<% } %>required>
-                <button class="sheet_row__button" type="submit">Add</button>
+                <button class="sheet_row__button" type="submit">
+                <% if(page_name === 'contacts_list') { %>Add<% } %>
+                <% if(page_name === 'contacts_edit') { %>Edit<% } %>
+                </button>
                 <a href="/contacts" class="sheet_row__button" type="button">Cancel</a>
             </form>
             <div class="sheet__row">

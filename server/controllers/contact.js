@@ -64,7 +64,7 @@ module.exports.renderEditContactPage = (req, res, next) => {
                 }
                 else{
                     //show the edit view
-                    res.render('./contacts/list', { page_name: 'contacts_list', target_contact: targetContact, contact_list: contactList, displayName: req.user ? req.user.displayName : '' });
+                    res.render('./contacts/list', { page_name: 'contacts_edit', target_contact: targetContact, contact_list: contactList, displayName: req.user ? req.user.displayName : '' });
                 }
             }).sort( { name: 1 } );
         }

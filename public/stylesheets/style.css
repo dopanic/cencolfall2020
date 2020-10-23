@@ -24,8 +24,7 @@ ul {
 
 /* Global */
 html, input, textarea, button {
-  --pointColour: rgb(231, 162, 0);
-  --linkColour: rgb(192, 139, 14);
+  --pointColour: rgb(221, 160, 16);
   --darkColour: rgb(20, 20, 20);
   --greyColour: rgb(100, 100, 100);
   --scrollbarTrack: rgba(0, 0, 0, 0);
@@ -52,7 +51,7 @@ strong {
   font-size: 3em;
 }
 a {
-  color: var(--linkColour);
+  color: var(--pointColour);
 }
 a:hover {
   text-decoration: underline;
@@ -118,7 +117,7 @@ body {
   padding: 4px 8px;
 }
 .menu__item:hover {
-  color: var(--linkColour);
+  color: var(--pointColour);
 }
 .menu__item--active {
   color: rgb(255, 255, 255);
@@ -209,7 +208,7 @@ body {
   outline-width: 0;
 }
 .form__input:hover {
-  border-bottom: 2px solid var(--linkColour);
+  border-bottom: 2px solid var(--pointColour);
 }
 .form__input:focus {
   border-bottom: 2px solid var(--pointColour);
@@ -234,7 +233,7 @@ body {
   text-decoration: underline;
 }
 .form__link:hover {
-  color: var(--linkColour);
+  color: var(--pointColour);
   text-decoration: underline;
 }
 .form__msg {
@@ -276,7 +275,7 @@ body {
 }
 .sheet_row__button:hover {
   text-decoration: none;
-  background-color: var(--linkColour);
+  background-color: var(--pointColour);
 }
 .sheet_row__button--caution {
   background-color: rgb(170, 25, 25);
@@ -302,7 +301,6 @@ body {
   color: var(--darkColour);
 }
 .footer__link:hover {
-  color: var(--linkColour);
   text-decoration: underline;
 }
 
