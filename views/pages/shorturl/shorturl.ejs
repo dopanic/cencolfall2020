@@ -1,0 +1,20 @@
+<%- include ../../partials/header.ejs %>
+<article class="article">
+    <div class="article__text--without_left_img">
+        <div class="sheet">
+            <h1>URL Shortener</h1>
+            <% if(messages.length > 0) { %>
+                <div class="form__msg">
+                    <%= messages %>
+                </div>
+            <% } %>
+            <!-- Header row -->
+            <form class="form" method="POST">
+                <input class="form__input" name="long_url" placeholder="Type the url...">
+            </fieldset>
+            <button class="form__submit" type="submit">Hit</button>
+            </form>
+        </div>
+    </div>
+</article>
+<%- include ../../partials/footer.ejs %>

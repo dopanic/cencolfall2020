@@ -1,0 +1,10 @@
+<%- include ../../partials/header.ejs %>
+<article class="article">
+    <div class="article__text--without_left_img">
+        <div class="sheet">
+            <div>Target: <a href="<%= targetUrl.longUrl %>"><%= targetUrl.longUrl %></a></div>
+            <div>Shorten: <a href="/shortlink/<%= targetUrl.shortCode %>">http://localhost:3000/shorturl/<%= targetUrl.shortCode %></a></div>
+        </div>
+    </div>
+</article>
+<%- include ../../partials/footer.ejs %>

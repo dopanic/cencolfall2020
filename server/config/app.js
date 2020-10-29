@@ -6,6 +6,9 @@ let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 let favicon = require('serve-favicon');
 
+// dotenv
+require('dotenv').config();
+
 // modules for authentication
 let session = require('express-session');
 let passport = require('passport');
@@ -29,6 +32,7 @@ mongoDB.once('open', () => {
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
 let contactRouter = require('../routes/contact');
+let urlShortenerRouter = require('../routes/shorturl');
 const { setegid } = require('process');
 
 var app = express();
@@ -63,7 +67,7 @@ app.use(passport.session());
 let userModel = require('../models/user');
 let User = userModel.User;
 
-// implement a User A
+// implement a User
 passport.use(User.createStrategy());
 
 // serialize and deserialize the User info
@@ -74,6 +78,8 @@ passport.deserializeUser(User.deserializeUser());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/contacts', contactRouter);
+app.use('/shorturl', urlShortenerRouter);
+
 
 // set favicon
 app.use(favicon(process.cwd() + '/public/images/favicon.ico'));
